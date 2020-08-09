@@ -17,7 +17,7 @@ if(isFile):
 else:
     for music in os.listdir(datatemp['input_path']):
         data['input_path'] = datatemp['input_path'] + '\\' + music
-        data['output_path'] = datatemp["output_path"] + '\pred_' + music
+        data['output_path'] = datatemp["output_path"] + '\pred_' + music.split('.')[0] + '.flac'
         res = requests.post(url, headers=headers, json=data)
         print(res)
 
