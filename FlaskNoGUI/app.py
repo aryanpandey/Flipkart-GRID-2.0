@@ -20,12 +20,11 @@ def load_model():
     return model
 
 def inputProcess(filepath, A=2000, L=110):
-    arr, _ = librosa.load(filepath, sr=22000)
+    arr, _ = librosa.load(filepath, sr=22000, duration=10)
     #arr = open(filepath, "r")
-    print("array = ",arr)
-    arr_pad = np.pad(arr, (0, A*L - len(arr)), 'constant', constant_values=(0,0))
-    arr_reshaped = arr_pad.reshape(1, A, L, 1)
-    arr_pad = np.reshape(arr_pad, (1, -1))
+    #print("array = ",arr)
+
+    arr_reshaped = arr.reshape(1, A, L, 1)
 
     return arr_reshaped
 
@@ -48,9 +47,9 @@ def predict():
         #response = request_json
         #return response, 200
         print("request_data: ", request_data)
-        print("reached before file")
+        #print("reached before file")
         filepath = request_data['input_path']
-        print("reached after file")
+        #print("reached after file")
         path = request_data['output_path']
         print("path: ", path)
         arr_reshaped = inputProcess(filepath)
@@ -63,7 +62,7 @@ def predict():
         response = json.dumps({1:2})
 
         return response, 200
-    return response, 303
+    return response, 403
 
 if __name__ == "__main__":
     app.run(debug=True)
