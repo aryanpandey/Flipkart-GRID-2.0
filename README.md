@@ -2,6 +2,13 @@
 
 This repository contains team Third Degree Burn's solution for Round 3 of the Flipkart GRiD 2.0.
 
+Correction in the video:- We meant to say that the audios are padded to a length of 10 seconds not 15 seconds. Any audio longer than that is cropped to 10 seconds and fed into the model.
+
+Link for drive folder where we have stored all our predictions on the input files: https://drive.google.com/drive/folders/1ewBhjymSAa-8PkT5S80DMuDDK8_dUK3a?usp=sharing
+
+Link to WER for each file: [link](WER_Each_predictions.xlsx)
+
+Video link: [link](FinalVideo.mp4)
 ## API Usage
 ### Without a GUI
 We have provided an API which uses Flask to take in the path to an input file or a directory with multiple input files and the path to an output directory where the files will be stored in WAV format. To make use of our scripts, run [this](FlaskNoGUI/wsgi.py) wsgi script on a terminal and then run [this](FlaskNoGUI/testing.py) interacting script separately to start interacting with the server.
@@ -16,6 +23,8 @@ The scripts can be found here:
 - Script for interacting with the server : [Script for Interacting](FlaskNoGUI/testing.py)
 
 ### With a GUI
+DISCLAIMER - Move the gbl_model.h5 file from the 'FlaskNoGUI/Models/' folder to the 'FlaskGUI/Models/' folder before running scripts in this section
+
 We have also made the scripts for having a small GUI incorporated with Flask using tkinter. The order to run the scripts is the same. You first run [this](FlaskGUI/wsgi_GUI.py) wsgi script on a terminal and then run [this](FlaskGUI/testing_GUI.py) interacting script separately to start interacting with the server. The only difference here is that On running the interacting script, a pop-up window shows in which you can select whether you want to input a single file or a whole directory. In any case, you need to select the input directory before the output directory, else the code will not run.
 
 The scripts for this can be found here:
