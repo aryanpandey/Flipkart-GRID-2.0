@@ -1,4 +1,5 @@
 # Flipkart-GRID-Noise-Cancellation-Solution
+### Owners: Aditya Das, Nihal John George and Aryan Pandey
 
 This repository contains team Third Degree Burn's solution for Round 3 of the Flipkart GRiD 2.0.
 
